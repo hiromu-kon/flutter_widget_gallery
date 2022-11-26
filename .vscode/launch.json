@@ -5,18 +5,18 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "flutter_component_gallery",
+      "name": "flutter_widget_gallery",
       "request": "launch",
       "type": "dart"
     },
     {
-      "name": "flutter_component_gallery (profile mode)",
+      "name": "flutter_widget_gallery (profile mode)",
       "request": "launch",
       "type": "dart",
       "flutterMode": "profile"
     },
     {
-      "name": "flutter_component_gallery (release mode)",
+      "name": "flutter_widget_gallery (release mode)",
       "request": "launch",
       "type": "dart",
       "flutterMode": "release"

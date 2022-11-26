@@ -1,6 +1,6 @@
 {
-    "name": "flutter_component_gallery",
-    "short_name": "flutter_component_gallery",
+    "name": "flutter_widget_gallery",
+    "short_name": "flutter_widget_gallery",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

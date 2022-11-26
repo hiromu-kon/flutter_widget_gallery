@@ -1,4 +1,4 @@
-# flutter_component_gallery
+# flutter_widget_gallery
 
 A new Flutter project.
 
