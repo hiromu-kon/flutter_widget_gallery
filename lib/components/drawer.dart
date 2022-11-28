@@ -8,6 +8,7 @@ import 'package:flutter_widget_gallery/components/list.dart';
 import 'package:flutter_widget_gallery/components/modal_bottom_sheet.dart';
 import 'package:flutter_widget_gallery/components/progress_indicator.dart';
 import 'package:flutter_widget_gallery/components/radio.dart';
+import 'package:flutter_widget_gallery/components/slider.dart';
 import 'package:flutter_widget_gallery/components/snack_bar.dart';
 import 'package:flutter_widget_gallery/components/text_field.dart';
 import 'package:flutter_widget_gallery/main.dart';
@@ -32,6 +33,7 @@ class AppDrawer extends ConsumerWidget {
       ProgressIndicatorSection.title,
       CheckboxSection.title,
       RadioSection.title,
+      SliderSection.title,
       ListSection.title,
       TextFieldSection.title,
       TabBarSection.title,
@@ -41,32 +43,36 @@ class AppDrawer extends ConsumerWidget {
       ModalBottomSheetSection.title,
     ];
     return Drawer(
-      child: Column(
-        children: [
-          ListView.builder(
-            shrinkWrap: true,
-            physics: const BouncingScrollPhysics(),
-            itemCount: drawerMenu.length,
-            itemBuilder: (context, index) => ListTile(
-              title: Text(drawerMenu[index]),
-              onTap: () async {
-                Navigator.pop(context);
-                itemController.scrollTo(
-                  index: index,
-                  duration: const Duration(milliseconds: 400),
-                );
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            ListView.builder(
+              shrinkWrap: true,
+              physics: const BouncingScrollPhysics(),
+              itemCount: drawerMenu.length,
+              itemBuilder: (context, index) => ListTile(
+                title: Text(drawerMenu[index]),
+                onTap: () async {
+                  Navigator.pop(context);
+                  itemController.scrollTo(
+                    index: index,
+                    duration: const Duration(milliseconds: 400),
+                  );
+                },
+              ),
+            ),
+            const Divider(),
+            SwitchListTile(
+              title: const Text('Material 3'),
+              value: ref.watch(useMaterial3Provider),
+              onChanged: (bool value) {
+                ref
+                    .read(useMaterial3Provider.notifier)
+                    .update((state) => value);
               },
             ),
-          ),
-          const Divider(),
-          SwitchListTile(
-            title: const Text('Material 3'),
-            value: ref.watch(useMaterial3Provider),
-            onChanged: (bool value) {
-              ref.read(useMaterial3Provider.notifier).update((state) => value);
-            },
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

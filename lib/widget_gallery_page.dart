@@ -9,6 +9,7 @@ import 'package:flutter_widget_gallery/components/list.dart';
 import 'package:flutter_widget_gallery/components/modal_bottom_sheet.dart';
 import 'package:flutter_widget_gallery/components/progress_indicator.dart';
 import 'package:flutter_widget_gallery/components/radio.dart';
+import 'package:flutter_widget_gallery/components/slider.dart';
 import 'package:flutter_widget_gallery/components/snack_bar.dart';
 import 'package:flutter_widget_gallery/components/text_field.dart';
 import 'package:flutter_widget_gallery/pages/bottom_navigation_bar.dart';
@@ -66,6 +67,7 @@ class _WidgetGalleryPageState extends ConsumerState<WidgetGalleryPage> {
       ProgressIndicatorSection(),
       CheckboxSection(),
       RadioSection(),
+      SliderSection(),
       ListSection(),
       TextFieldSection(),
       TabBarSection(),
